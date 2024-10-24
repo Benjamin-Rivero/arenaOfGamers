@@ -118,13 +118,10 @@ app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-<<<<<<< HEAD
 app.get("/contact", (req, res) => {
 	res.sendFile(path.join(__dirname, "public/contact.html"));
 });
 
-=======
->>>>>>> page-contact
 app.post(
 	"/contact",
 	// using validation to verify valid inputs (MIDDLEWARE)
