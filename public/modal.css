@@ -536,3 +536,24 @@ footer {
   }
 }
 
+#section-contact{
+margin : 1rem auto;
+
+}
+
+#section-contact .block-form {
+  display: flex;
+  justify-content: space-between;
+
+}
+#section-contact form{
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+
+#section-contact form .block-textarea{
+
+  display: flex;
+  flex-direction: column;
+}
