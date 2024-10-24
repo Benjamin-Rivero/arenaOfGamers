@@ -71,6 +71,67 @@ img {
   display: none;
 }
 
+/*-----À propos------*/
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.container .row{
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+.container .row-2{
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+.container .row-3{
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+.about-title{
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #1d3557;
+  margin-top: 50px;
+}
+.about-col-1{
+  flex-basis: 45%;
+}
+.about-col-1 img{
+  width: 100%;
+  height: 50vh;
+  border-radius: 25px;
+}
+.about-col-2{
+  flex-basis: 45%;
+  box-shadow: 10px 10px 5px 12px lightblue;
+  border-radius: 25px;
+}
+.about-col-2 h1{
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  color: #1d3557;
+  margin-top: 30px;
+}
+
+.about-col-2 p{
+  font-size: 14px;
+  text-align: center;
+  padding-top: 30px;
+  line-height: 35px;
+  color: #1d3557;
+
+}
+
+
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -105,7 +166,55 @@ img {
   .hero-headline, .titre{
     font-size: 3.3rem !important;
   }
-} 
+  /*-----À propos------*/
+.container .row{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container .row-2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container .row-3{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.about-col-1{
+  padding-top: 40px;
+}  
+.about-col-1 img{
+  width: 110%;
+  height: 25vh;
+  border-radius: 25px;
+  padding-bottom: 20px;
+}    
+.about-col-2 h1{
+  font-size: 18px;
+  font-weight: 400;
+  padding: 30px;
+  text-align: center;
+}
+
+.about-title{
+  font-size: 14px;
+  font-weight: 200;
+  padding: 10px;
+  text-align: center;
+}
+
+.about-col-2 p{
+  font-size: 12px;
+  text-align: left;
+  padding: 24px;
+  line-height: 35px;
+  color: #1d3557;
+}
+}
+/*-----fin À propos------*/
 
 main {
   font-size: 130%;
@@ -120,6 +229,14 @@ main {
 
 
 }
+
+.footer {
+  margin: 20px;
+  padding: 10px;
+  font-family: var(--font-slab);
+}
+
+/* Modal form */
 
 .modal-btn {
   font-size: 145%;
@@ -137,13 +254,6 @@ main {
   background: #3876ac;
 }
 
-.footer {
-  margin: 20px;
-  padding: 10px;
-  font-family: var(--font-slab);
-}
-
-/* Modal form */
 
 .button {
   background: #2B7EC0;
