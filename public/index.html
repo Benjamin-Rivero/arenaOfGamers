@@ -12,23 +12,24 @@
     />
   </head>
   <body>
+    <header>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
       <img alt="logo" src="logo_game-in.png"/>
     </div>
     <div class="main-navbar">
-      
       <a href="#" class="active"><span>Accueil</span></a>
       <a href="#"><span>Évènement à venir</span></a>
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Évènements passés</span></a>
-      <a href="#"><span>Contact</span></a>
+      <a href="contact.html"><span>Contact</span></a>
       <a href="javascript:void(0);" class="icon" onclick="editNav()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
     </div>
   </div>
+</header>
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -57,13 +58,10 @@
             <form
               name="reserve"
               action="index.html"
-              method="get"
-              onsubmit="return validate();"
-            >
-              <div
-                class="formData">
-                <label>Prénom</label><br>
-                <input
+              method="post"
+              onsubmit="return validate();">
+              <div class="formData">
+                <label>Prénom</label><br><input
                   class="text-control"
                   type="text"
                   id="first"
@@ -71,6 +69,7 @@
                   minlength="2"
                 /><br>
               </div>
+              <p class="error error-firstName"></p>
               <div
                 class="formData">
                 <label>Nom</label><br>
@@ -81,6 +80,7 @@
                   name="last"
                 /><br>
               </div>
+              <p class="error error-lastName"></p>
               <div
                 class="formData">
                 <label>E-mail</label><br>
@@ -91,6 +91,7 @@
                   name="email"
                 /><br>
               </div>
+              <p class="error error-email"></p>
               <div
                 class="formData">
                 <label>Date de naissance</label><br>
@@ -101,6 +102,7 @@
                   name="birthdate"
                 /><br>
               </div>
+              <p class="error error-dateBirth"></p>
               <div
                 class="formData">
                 <label>À combien de tournois <strong>Legends' Arena</strong> avez-vous déjà participé ?</label><br>
