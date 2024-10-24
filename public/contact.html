@@ -35,14 +35,17 @@
         <div class="block-email block-form">
         <label for="email" >Votre email :</label>
         <input id="input-email" name="email" type="email" required>
+        <p class="error error-email"></p>
     </div>
     <div class="block-subject block-form">
         <label for="subject" >Votre sujet :</label>
         <input id="subject-input" name="subject" type="text" required>
+        <p class="error error-subject"></p>
         </div>
         <div class="block-textarea">
         <label for="message" >Votre message :</label>
         <textarea id="message-input" name="message" type="text" rows="5" cols="20" required></textarea>
+        <p class="error error-message"></p>
     </div>
     <div class="block-submit block-form">
             <input type="submit" value="Envoyer">
@@ -55,4 +58,6 @@
             Copyright 2014 - 2024, Game-In - Arena Of Gamers
           </p>
     </footer>
+    <script src="modal.js"></script>
 </body>
+</html>

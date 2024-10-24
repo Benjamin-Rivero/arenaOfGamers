@@ -58,13 +58,10 @@
             <form
               name="reserve"
               action="index.html"
-              method="get"
-              onsubmit="return validate();"
-            >
-              <div
-                class="formData">
-                <label>Prénom</label><br>
-                <input
+              method="post"
+              onsubmit="return validate();">
+              <div class="formData">
+                <label>Prénom</label><br><input
                   class="text-control"
                   type="text"
                   id="first"
@@ -72,6 +69,7 @@
                   minlength="2"
                 /><br>
               </div>
+              <p class="error error-firstName"></p>
               <div
                 class="formData">
                 <label>Nom</label><br>
@@ -82,6 +80,7 @@
                   name="last"
                 /><br>
               </div>
+              <p class="error error-lastName"></p>
               <div
                 class="formData">
                 <label>E-mail</label><br>
@@ -92,6 +91,7 @@
                   name="email"
                 /><br>
               </div>
+              <p class="error error-email"></p>
               <div
                 class="formData">
                 <label>Date de naissance</label><br>
@@ -102,6 +102,7 @@
                   name="birthdate"
                 /><br>
               </div>
+              <p class="error error-dateBirth"></p>
               <div
                 class="formData">
                 <label>À combien de tournois <strong>Legends' Arena</strong> avez-vous déjà participé ?</label><br>
