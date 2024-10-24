@@ -21,3 +21,22 @@ function launchModal() {
 }
 
 
+const formContact = document.querySelector("#section-contact form");
+
+if(formContact)
+{
+  formContact.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+    const formData = new FormData(formContact);
+
+    const response = await fetch("/contact", {
+      method: "POST",
+      body: formData,
+    });
+    console.log(await response.json());
+
+  })
+}
+
+
