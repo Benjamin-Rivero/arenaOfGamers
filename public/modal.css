@@ -71,6 +71,117 @@ img {
 	display: none;
 }
 
+/*-----À propos------*/
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.container .row{
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+.container .row-2{
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+.container .row-3{
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+.about-title{
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #9370DB;
+  margin-top: 50px;
+}
+.about-col-1{
+  flex-basis: 45%;
+}
+.about-col-1 img{
+  width: 100%;
+  height: 50vh;
+  border-radius: 25px;
+}
+.about-col-2{
+  flex-basis: 45%;
+  box-shadow: 10px 10px 5px 12px lightblue;
+  border-radius: 25px;
+}
+.about-col-2 h1{
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  color: #9370DB;
+  margin-top: 30px;
+}
+
+.about-col-2 p{
+  font-size: 14px;
+  text-align: center;
+  padding-top: 30px;
+  line-height: 35px;
+  color: #333;
+
+}
+/*-----fin À propos------*/
+
+/*-----Événements à venir------*/
+
+.events{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.events-title{
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #9370DB;
+  margin-top: 50px;
+}
+.event{
+  box-shadow: 10px 10px 5px 12px lightblue;
+  border-radius: 25px;
+  margin-bottom: 100px; 
+  width: 100%;
+}
+.event-col-1 img{
+  width: 50%;
+  height: 50vh;
+  border-radius: 25px;
+}
+.event-col-1-para{
+  margin: 50px 30px;
+}
+.event-col-1-para h2
+{ 
+  font-size: 24px;
+  font-weight: 500;
+  color: #9370DB;
+  margin-top: 50px;
+}
+.event-col-1-para button
+{ 
+  background-color: #9370DB; 
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+
 @media screen and (max-width: 768px) {
 	.topnav a {
 		display: none;
@@ -97,32 +208,130 @@ img {
 	}
 }
 
-@media screen and (max-width: 540px) {
-	.topnav a {
-		display: none;
-	}
-	.topnav a.icon {
-		float: right;
-		display: block;
-		margin-top: -15px;
-	}
-	.hero-headline,
-	.titre {
-		font-size: 3.3rem !important;
-	}
+ @media screen and (max-width: 540px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: -15px;
+  }
+  .hero-headline, .titre{
+    font-size: 3.3rem !important;
+  }
+  /*-----À propos------*/
+.container .row{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container .row-2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container .row-3{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.about-col-1{
+  padding-top: 40px;
+}  
+.about-col-1 img{
+  width: 110%;
+  height: 25vh;
+  border-radius: 25px;
+  padding-bottom: 20px;
+}    
+.about-col-2 h1{
+  font-size: 18px;
+  font-weight: 400;
+  padding: 30px;
+  text-align: center;
 }
 
-main {
-	font-size: 130%;
-	font-weight: bolder;
-	color: #000;
-	padding-top: 0.5vw;
-	padding-left: 2vw;
-	padding-right: 2vw;
-	margin: 1px 20px 15px;
-	border-radius: 2rem;
-	text-align: justify;
+.about-title{
+  font-size: 14px;
+  font-weight: 200;
+  padding: 10px;
+  text-align: center;
 }
+
+.about-col-2 p{
+  font-size: 12px;
+  text-align: left;
+  padding: 24px;
+  line-height: 35px;
+  color: #1d3557;
+}
+}
+/*-----fin À propos------*/
+
+/*-----Événements à venir------*/
+
+.events{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.event{
+  border-radius: 25px;
+  margin-bottom: 100px; 
+  width: 90%;
+  margin-left: 10px;
+}
+.events-title{
+  font-size: 18px;
+  font-weight: 200;
+  text-align: center;
+}
+.event-col-1 img{
+  width: 100%;
+  height: 25vh;
+  border-radius: 25px;
+  padding-bottom: 20px;
+}
+
+.event-col-1-para h2
+{ 
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 30px;
+}
+.event-col-1-para button
+{ 
+  background-color: #9370DB; 
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+
+/*-----fin du Événements à venir------*/
+main {
+  font-size: 130%;
+  font-weight: bolder;
+  color: #000;
+  padding-top: 0.5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 1px 20px 15px;
+  border-radius: 2rem;
+  text-align: justify;
+
+
+}
+
+.footer {
+  margin: 20px;
+  padding: 10px;
+  font-family: var(--font-slab);
+}
+
+/* Modal form */
 
 .modal-btn {
 	font-size: 145%;
