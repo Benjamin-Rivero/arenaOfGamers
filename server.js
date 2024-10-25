@@ -14,11 +14,11 @@ const sequelize = new Sequelize("db_arena", "root", "", {
 const User = sequelize.define(
 	"User",
 	{
-		nom: {
+		first: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		prenom: {
+		last: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
@@ -26,15 +26,15 @@ const User = sequelize.define(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		dateNaissance: {
+		birthdate: {
 			type: DataTypes.DATE,
 			allowNull: false,
 		},
-		nbParticipationTournoi: {
+		quantity: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		tournoiWish: {
+		location: {
 			type: DataTypes.ENUM,
 			values: [
 				"New York",
@@ -62,7 +62,7 @@ const Contact = sequelize.define(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		sujet: {
+		subject: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
@@ -94,12 +94,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.post(
 	"/contact",
-	// using validation to verify valid inputs (MIDDLEWARE)
 	[
 		[
-			body("email").isEmail(),
-			body("subject").notEmpty(),
-			body("message").notEmpty(),
+			body("email").isEmail().withMessage("Veuillez rentrer un email"),
+			body("subject")
+				.notEmpty()
+				.withMessage("Veuillez rentrer le sujet de votre message"),
+			body("message").notEmpty().withMessage("Veuillez rentrer un message"),
 		],
 	],
 	async (req, res) => {
@@ -109,7 +110,42 @@ app.post(
 			return res.status(400).json({ errors: errors.array() });
 		}
 		Contact.create(req.body);
-		res.status(200).json({ success: "Successful Sign Up!" });
+		res.status(200).json({ success: "Le message a été envoyé avec succès" });
+	}
+);
+
+app.post(
+	"/",
+	[
+		[
+			body("first").notEmpty().withMessage("Veuillez rentrer votre prénom"),
+			body("last").notEmpty().withMessage("Veuillez rentrer votre nom"),
+			body("email").isEmail().withMessage("L'email doit être valide"),
+			body("email").notEmpty().withMessage("Veuillez rentrer votre email"),
+			body("birthdate").isDate().withMessage("La date doit être valide"),
+			body("birthdate").notEmpty().withMessage("Veuillez rentrer une date"),
+			body("birthdate")
+				.isBefore(Date.now.toString())
+				.withMessage("Veuillez rentrer une date de naissance dans le passé"),
+			body("quantity")
+				.notEmpty()
+				.withMessage(
+					"Veuillez rentrer le nombre de tournois auxquels vous avez déjà participé"
+				),
+			body("location").notEmpty().withMessage("Veuillez indiquer une ville"),
+		],
+	],
+	async (req, res) => {
+		const errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+		if (req.body("consent") != true) {
+			return res.status(400).json({ error: "You need to consent to register" });
+		}
+		Contact.create(req.body);
+		res.status(200).json({ success: "Oui inscrit oui" });
 	}
 );
 
