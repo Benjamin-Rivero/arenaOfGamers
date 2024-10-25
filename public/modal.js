@@ -11,6 +11,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const formRegister = document.querySelector(".modal-body form")
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
