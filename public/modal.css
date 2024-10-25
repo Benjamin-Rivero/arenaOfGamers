@@ -130,6 +130,56 @@ img {
   color: #333;
 
 }
+/*-----fin À propos------*/
+
+/*-----Événements à venir------*/
+
+.events{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.events-title{
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #9370DB;
+  margin-top: 50px;
+}
+.event{
+  box-shadow: 10px 10px 5px 12px lightblue;
+  border-radius: 25px;
+  margin-bottom: 100px; 
+  width: 100%;
+}
+.event-col-1 img{
+  width: 50%;
+  height: 50vh;
+  border-radius: 25px;
+}
+.event-col-1-para{
+  margin: 50px 30px;
+}
+.event-col-1-para h2
+{ 
+  font-size: 24px;
+  font-weight: 500;
+  color: #9370DB;
+  margin-top: 50px;
+}
+.event-col-1-para button
+{ 
+  background-color: #9370DB; 
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -177,7 +227,6 @@ img {
   flex-direction: column;
   width: 100%;
 }
-
 .container .row-3{
   display: flex;
   flex-direction: column;
@@ -216,6 +265,50 @@ img {
 }
 /*-----fin À propos------*/
 
+/*-----Événements à venir------*/
+
+.events{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.event{
+  border-radius: 25px;
+  margin-bottom: 100px; 
+  width: 90%;
+  margin-left: 10px;
+}
+.events-title{
+  font-size: 18px;
+  font-weight: 200;
+  text-align: center;
+}
+.event-col-1 img{
+  width: 100%;
+  height: 25vh;
+  border-radius: 25px;
+  padding-bottom: 20px;
+}
+
+.event-col-1-para h2
+{ 
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 30px;
+}
+.event-col-1-para button
+{ 
+  background-color: #9370DB; 
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+
+/*-----fin du Événements à venir------*/
 main {
   font-size: 130%;
   font-weight: bolder;
