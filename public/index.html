@@ -55,11 +55,7 @@
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
-            <form
-              name="reserve"
-              action="index.html"
-              method="post"
-              onsubmit="return validate();">
+            <form>            
               <div class="formData">
                 <label>Prénom</label><br><input
                   class="text-control"
@@ -178,13 +174,13 @@
                   Portland</label
                 >
               </div>
-
+              <p class="error error-city"></p>
               <div
                 class="formData">
                 <input
                   class="checkbox-input"
                   type="checkbox"
-                  id="checkbox1"
+                  id="checkbox1" name="consent"
                   checked
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
@@ -192,7 +188,7 @@
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
-                <input class="checkbox-input" type="checkbox" id="checkbox2" />
+                <input class="checkbox-input" type="checkbox" id="checkbox2" name="newsletter" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Je Je souhaite être prévenu des prochains évènements.
@@ -205,6 +201,7 @@
                 class="button"
                 value="C'est parti"
               />
+              <p class="error error-consent"></p>
             </form>
           </div>
         </div>
