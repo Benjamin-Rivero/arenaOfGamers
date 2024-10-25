@@ -6,7 +6,7 @@ function editNav() {
 		x.className = 'topnav';
 	}
 }
-
+console.log(Date.now().toString());
 // DOM Elements
 const modalbg = document.querySelector('.bground');
 const modalBtn = document.querySelectorAll('.modal-btn');
@@ -29,16 +29,15 @@ if (formContact) {
 		const formData = new FormData(formContact);
 
 		let data = JSON.stringify(Object.fromEntries(formData));
-		console.log(data); // pour transformer en json le form
-
+		
 		const response = await fetch('/contact', {
 			method: 'POST',
 			body: data,
 			headers: {
 				'Content-Type': 'application/json',
 			},
-		});
-		console.log(await response.json());
+		}).then(resp => resp.json());
+        treatResponse(response);
 	});
 }
 
@@ -54,6 +53,7 @@ if (formRegister) {
         'consent',
         formDataInscription.get('consent') ? true : false
     );
+    console.log(formDataInscription.get('birthdate'));
       let data = JSON.stringify(Object.fromEntries(formDataInscription));
       console.log(data); // pour transformer en json le form
 
@@ -63,20 +63,32 @@ if (formRegister) {
           headers: {
               'Content-Type': 'application/json',
           },
-      });
+      }).then(resp => resp.json());
       treatResponse(response);
   });
 }
 
 
-function treatResponse(jsonResponse)
-{
-jsonResponse.forEach( item => {
-console.log(item);
-const selector = `error-${item.errorName}`;
-const errorElement = document.querySelector(selector);
-errorElement.textContent = item.message;
+function treatResponse(jsonResponse){ 
 
-})
-}
+    if(jsonResponse.errors)
+    {
+
+        const errorElements = document.querySelectorAll('.error');
+        errorElements.forEach( element => {
+
+            element.textContent ="";
+        });
+
+        jsonResponse.errors.forEach( item => {
+            if(item)
+            {
+                console.log(`error-${item.path}`);
+                const selector = `.error-${item.path}`;
+                const errorElement = document.querySelector(selector);
+                errorElement.textContent = item.msg;
+
+        }});
+    }
+   }
 

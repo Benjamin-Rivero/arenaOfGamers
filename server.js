@@ -125,7 +125,7 @@ app.post(
 			body('birthdate').isDate().withMessage('La date doit être valide'),
 			body('birthdate').notEmpty().withMessage('Veuillez rentrer une date'),
 			body('birthdate')
-				.isBefore(Date.now.toString())
+				.isBefore(new Date().toDateString())
 				.withMessage('Veuillez rentrer une date de naissance dans le passé'),
 			body('quantity')
 				.notEmpty()
@@ -141,10 +141,10 @@ app.post(
 		if (!errors.isEmpty()) {
 			return res.status(400).json({ errors: errors.array() });
 		}
-		if (req.body('consent') != true) {
-			return res.status(400).json({ error: 'You need to consent to register' });
+		if (req.body.consent != "true") {
+			return res.status(400).json({errors:[{ msg: 'You need to consent to register', path:'consent'}]});
 		}
-		Contact.create(req.body);
+		User.create(req.body);
 		res.status(200).json({ success: 'Oui inscrit oui' });
 	}
 );
