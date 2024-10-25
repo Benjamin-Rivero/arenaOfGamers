@@ -53,13 +53,13 @@ p {
 }
 
 .topnav a:hover {
-	background-color: #2b7ec0;
+	background-color: #65348c;
 	color: #ffffff;
 	border-radius: 15px;
 }
 
 .topnav a.active {
-	background-color: #2b7ec0;
+	background-color: #65348c;
 	color: #ffffff;
 	border-radius: 15px;
 }
@@ -95,7 +95,7 @@ p {
   font-size: 24px;
   font-weight: 500;
   text-align: center;
-  color: #9370DB;
+	color: #65348c;
   margin-top: 50px;
 }
 .about-col-1{
@@ -115,7 +115,7 @@ p {
   font-size: 32px;
   font-weight: 900;
   text-align: center;
-  color: #9370DB;
+  color: #65348c;
   margin-top: 30px;
 }
 
@@ -140,7 +140,7 @@ p {
   font-size: 24px;
   font-weight: 500;
   text-align: center;
-  color: #9370DB;
+  color: #65348c;
   margin-top: 50px;
 }
 .event{
@@ -157,7 +157,7 @@ p {
 { 
   font-size: 24px;
   font-weight: 500;
-  color: #9370DB;
+  color: #65348c;
   margin-top: 50px;
 }
 .event-col-1-para button
@@ -800,4 +800,5 @@ footer {
   font-size: 0.75em;
   color: red;
 }
+
 
