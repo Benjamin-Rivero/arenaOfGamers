@@ -11,6 +11,7 @@ function editNav() {
 const modalbg = document.querySelector('.bground');
 const modalBtn = document.querySelectorAll('.modal-btn');
 const formData = document.querySelectorAll('.formData');
+const formRegister = document.querySelector(".modal-body form")
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
@@ -40,3 +41,42 @@ if (formContact) {
 		console.log(await response.json());
 	});
 }
+
+if (formRegister) {
+  formRegister.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formDataInscription = new FormData(formRegister);
+      formDataInscription.set(
+          'newsletter',
+          formDataInscription.get('newsletter') ? true : false
+      );
+      formDataInscription.set(
+        'consent',
+        formDataInscription.get('consent') ? true : false
+    );
+      let data = JSON.stringify(Object.fromEntries(formDataInscription));
+      console.log(data); // pour transformer en json le form
+
+      const response = await fetch('/', {
+          method: 'POST',
+          body: data,
+          headers: {
+              'Content-Type': 'application/json',
+          },
+      });
+      treatResponse(response);
+  });
+}
+
+
+function treatResponse(jsonResponse)
+{
+jsonResponse.forEach( item => {
+console.log(item);
+const selector = `error-${item.errorName}`;
+const errorElement = document.querySelector(selector);
+errorElement.textContent = item.message;
+
+})
+}
+
