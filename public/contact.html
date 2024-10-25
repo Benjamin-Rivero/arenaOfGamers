@@ -34,18 +34,24 @@
     <form>
         <div class="block-email block-form">
         <label for="email" >Votre email :</label>
+        <div class="input-error">
         <input id="input-email" name="email" type="email" required>
         <p class="error error-email"></p>
+      </div>
+
     </div>
     <div class="block-subject block-form">
         <label for="subject" >Votre sujet :</label>
+        <div class="input-error">
         <input id="subject-input" name="subject" type="text" required>
-        <p class="error error-subject"></p>
+        <p class="error error-subject"></p></div>
         </div>
         <div class="block-textarea">
         <label for="message" >Votre message :</label>
+        <div class="input-error">
         <textarea id="message-input" name="message" type="text" rows="5" cols="20" required></textarea>
         <p class="error error-message"></p>
+      </div>
     </div>
     <div class="block-submit block-form">
             <input type="submit" value="Envoyer">

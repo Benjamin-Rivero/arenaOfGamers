@@ -6,7 +6,6 @@ function editNav() {
 		x.className = 'topnav';
 	}
 }
-console.log(Date.now().toString());
 // DOM Elements
 const modalbg = document.querySelector('.bground');
 const modalBtn = document.querySelectorAll('.modal-btn');
@@ -53,10 +52,8 @@ if (formRegister) {
         'consent',
         formDataInscription.get('consent') ? true : false
     );
-    console.log(formDataInscription.get('birthdate'));
-      let data = JSON.stringify(Object.fromEntries(formDataInscription));
-      console.log(data); // pour transformer en json le form
 
+      let data = JSON.stringify(Object.fromEntries(formDataInscription));
       const response = await fetch('/', {
           method: 'POST',
           body: data,
@@ -83,7 +80,6 @@ function treatResponse(jsonResponse){
         jsonResponse.errors.forEach( item => {
             if(item)
             {
-                console.log(`error-${item.path}`);
                 const selector = `.error-${item.path}`;
                 const errorElement = document.querySelector(selector);
                 errorElement.textContent = item.msg;
