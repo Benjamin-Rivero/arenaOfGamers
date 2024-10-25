@@ -97,6 +97,7 @@ function treatResponse(jsonResponse, form){
     } else {
         form.reset();
         closeModal();
+        alert("BRAVO !")
     }
    }
 
