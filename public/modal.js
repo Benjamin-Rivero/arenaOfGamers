@@ -45,7 +45,7 @@ if (formContact) {
 				'Content-Type': 'application/json',
 			},
 		}).then(resp => resp.json());
-        treatResponse(response);
+        treatResponse(response, formContact);
 	});
 }
 
@@ -70,12 +70,12 @@ if (formRegister) {
               'Content-Type': 'application/json',
           },
       }).then(resp => resp.json());
-      treatResponse(response);
+      treatResponse(response, formRegister);
   });
 }
 
 
-function treatResponse(jsonResponse){ 
+function treatResponse(jsonResponse, form){ 
 
     if(jsonResponse.errors)
     {
@@ -94,6 +94,9 @@ function treatResponse(jsonResponse){
                 errorElement.textContent = item.msg;
 
         }});
+    } else {
+        form.reset();
+        closeModal();
     }
    }
 
